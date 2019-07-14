@@ -1,0 +1,13 @@
+1) Create Rails Backend
+    Create Users
+    Create Calendar
+    Create Day
+        Contacts
+        Foods
+        Stress
+        Weather
+        Location
+        Time   
+    Create Symptom
+        Experience
+    
