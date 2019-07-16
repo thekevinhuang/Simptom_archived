@@ -1,13 +1,23 @@
 1) Create Rails Backend
     Create Users
+        Create Patient
+            (has many) Symptoms
+            (has many) Calendars
+        Create Provider
+            (has many) Patients
     Create Calendar
-    Create Day
-        Contacts
-        Foods
-        Stress
-        Weather
-        Location
-        Time   
+        Create Day (belongs to Patient)
+            Create Contact Category
+                (has many) Contacts
+                Foods
+                Stress
+                Weather
+                Location
+                Time
+            (has many) Visits  
     Create Symptom
-        Experience
+        Create (has many) Experiences
+    Create Visit
+        (has many) Symptoms
+        Create (has many) Procedures
     
