@@ -3,7 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+
+   
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="google-signin-client_id" content="365059427271-nelkjm8irrdn3gvbhk8698tqb7iipsmr.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+
+    <script>
+      function init() {
+        gapi.load('auth2', function() { });
+      }
+    </script>
     <meta name="theme-color" content="#000000" />
     <!--
       manifest.json provides metadata used when your web app is installed on a

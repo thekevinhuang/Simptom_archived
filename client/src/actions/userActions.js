@@ -22,7 +22,7 @@ export function googleLogin(authResult) {
             }
         })
         .catch(error=>{
-            dispatch({type: LOGIN_FAILURE, error:error})
+            dispatch({type: 'LOGIN_FAILURE', error:error})
         })
     }
 }

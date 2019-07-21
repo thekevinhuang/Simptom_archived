@@ -9,7 +9,7 @@ class App extends Component {
     super()
     this.state = {
       loggedin: false,
-      currentUser = ''
+      currentUser: ''
     }
   }
 
@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={}/>
+          <Route exact path="/" component={Home}/>
         </Switch>
       </Router>
     )
