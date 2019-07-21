@@ -26,3 +26,9 @@ export function googleLogin(authResult) {
         })
     }
 }
+
+export function userLogout() {
+    return function (dispatch) {
+        dispatch({type: "USER_LOGOUT", user:{}})
+    }
+}
