@@ -5,18 +5,21 @@
             (has many) Calendars
         Create Provider
             (has many) Patients
+    Create Contact Category
     Create Calendar
-        Create Day (belongs to Patient)
-            Create Contact Category
-                (has many) Contacts
-                Foods
-                Stress
-                Weather
-                Location
-                Time
+        Create Days
+            Create Symptom_Day (belongs Symptom)
+                (has many) Contact Category
+                    (has many) Contacts
+                    Foods
+                    Stress
+                    Weather
+                    Location
+                    Time
             (has many) Visits  
     Create Symptom
-        Create (has many) Experiences
+    
+
     Create Visit
         (has many) Symptoms
         Create (has many) Procedures
