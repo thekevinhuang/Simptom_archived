@@ -11,8 +11,11 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.loginCheck
+        //this.loginCheck
     }
+
+    
+
 }
 
 export default connect(mapStateToProps)(Home)
