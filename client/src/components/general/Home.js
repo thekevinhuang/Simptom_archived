@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import GoogleLogin from '../users/GoogleLogin'
+import {Link} from 'react-router-dom'
 
 class Home extends Component {
 
@@ -13,6 +14,7 @@ class Home extends Component {
             <React.Fragment>
                 Hello!
                 <GoogleLogin/>
+                <Link to={"/logout"}>logout</Link>
             </React.Fragment>
         )
     }
