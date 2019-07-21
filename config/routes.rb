@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   scope '/api' do
     resources :users 
+
+    post 'auth/request' => 'users#google_authorization'
   end
 
-  post 'auth/request' => 'users#google_authorization'
+  
 end
