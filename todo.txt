@@ -2,7 +2,7 @@
     Create Users
         Create Patient
             (has many) Symptoms
-            (has many) Calendars
+            (has many) Calendars through symptoms
         Create Provider
             (has many) Patients
     Create Contact Category
