@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from './components/general/Home'
+import Logout from './components/users/Logout'
 import {connect} from 'react-redux'
 
 import './App.css';
