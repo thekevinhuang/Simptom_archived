@@ -33,10 +33,33 @@ export function userLogout() {
     }
 }
 
-export function userLogin() {
+export function userLogin(user) {
     return function (dispatch) {
         //fix route
-        return fetch('/api/')
-        dispatch({type: "USER_LOGIN", user: {}})
+        return fetch('/api/', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            credentials: 'same-origin',
+            body: JSON.stringify({user:user})
+            .then(result=> result.json())
+            .then((responseJson)=> {
+                dispatch({type: "USER_LOGIN", user:responseJson})
+                if (typeof localStorage === 'object'){
+                    try{
+                        localStorage.setItem("current_user", JSON.stringify(responseJson))
+                    } catch (e){
+                        alert("There was an issue with your login")
+                    }
+                }
+            })
+            .catch(error=>{
+                dispatch({type: "LOGIN_FAILURE", error:error})
+            })
+
+        })
+        
     }
 }

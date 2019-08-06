@@ -21,7 +21,7 @@ class Login extends Component {
             password: this.state.password
         }
 
-
+        this.props.loginUser(user)
         this.setState(initialState)
     }
 
@@ -42,7 +42,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        loginUser: (user) => dispatch(loginUser(user))
     }
 }
 
