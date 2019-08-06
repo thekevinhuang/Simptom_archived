@@ -32,3 +32,11 @@ export function userLogout() {
         dispatch({type: "USER_LOGOUT", user:{}})
     }
 }
+
+export function userLogin() {
+    return function (dispatch) {
+        //fix route
+        return fetch('/api/')
+        dispatch({type: "USER_LOGIN", user: {}})
+    }
+}
