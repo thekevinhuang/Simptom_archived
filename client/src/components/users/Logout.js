@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {userLogout} from '../../actions/userActions'
-import {Link} from './react-router-dom'
+import {Link} from 'react-router-dom'
 
 const gapi = window.gapi
 

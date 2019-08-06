@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {loginUser} from '../../actions/userActions'
+import {userLogin} from '../../actions/userActions'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 const initialState = {
     email: '',
@@ -21,15 +23,29 @@ class Login extends Component {
             password: this.state.password
         }
 
-        this.props.loginUser(user)
+        this.props.userLogin(user)
         this.setState(initialState)
+    }
+
+    loginChange = name => event => {
+        this.setState({
+            [name] :event.target.value
+        })
     }
 
     render() {
         //if logged in already, just redirect
-        <form onSubmit={this.loginSubmit}>
+        return(
+            <form onSubmit={this.loginSubmit}>
+                <TextField label="email" onChange={this.loginChange("username")} value={this.state.email} margin="normal"/>
 
-        </form>
+                <TextField label="password" type="password" onChange={this.loginChange("password")} value={this.state.password} margin="normal"/>
+
+                <Button variant="contained" type="submit">
+                    Login
+                </Button>
+            </form>
+        )
     }
 }
 
@@ -42,7 +58,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loginUser: (user) => dispatch(loginUser(user))
+        userLogin: (user) => dispatch(userLogin(user))
     }
 }
 
