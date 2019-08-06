@@ -15,6 +15,7 @@ class Home extends Component {
                 Hello!
                 <GoogleLogin/>
                 <Link to={"/logout"}>logout</Link>
+                <Link to={"/login"}>login</Link>
             </React.Fragment>
         )
     }
