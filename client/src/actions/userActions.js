@@ -63,4 +63,34 @@ export function userLogin(user) {
         
     }
 }
+
+export function userSignup(user) {
+    return function (dispatch){
+        //correct the route
+        return fetch('/api/',{
+            method: 'POST',
+            headers:{
+                Accept: "application/json",
+                'Content-Type': 'application/json',
+            },
+            credentials: "same-origin",
+            body: JSON.stringify({user:user})
+            .then(result=> result.json())
+            .then((responseJSON)=> {
+                dispatch({type: "USER_SIGNUP", user: responseJSON})
+                if (typeof localStorage === 'object'){
+                    try{
+                        localStorage.setItem("current_user", JSON.stringify(responseJson))
+                    } catch (e){
+                        alert("There was an issue with your login")
+                    }
+                }
+            })
+            .catch(error=>{
+                dispatch({type: "LOGIN_FAILURE", error:error})
+            })
+        })
+    }
+
+}
 //write signupUser

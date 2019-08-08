@@ -5,10 +5,20 @@ function userReducer (state={}, action) {
                 ...state,
                 currentUser: action.user
             }
+        case 'USER_LOGIN':
+            return {
+                ...state,
+                currentUser: action.user
+            }
         case 'USER_LOGOUT':
             return {
                 ...state,
                 currentUser: action.user
+            }
+        case 'USER_SIGNUP':
+            return {
+                ...state,
+                currentUser:action.user
             }
         default:
             return state
