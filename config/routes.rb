@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users 
 
     post 'auth/request' => 'users#google_authorization'
+    post '/login' => 'users#login'
   end
 
   

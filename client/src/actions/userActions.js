@@ -35,8 +35,7 @@ export function userLogout() {
 
 export function userLogin(user) {
     return function (dispatch) {
-        //fix route
-        return fetch('/api/', {
+        return fetch('/api/login', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -66,8 +65,7 @@ export function userLogin(user) {
 
 export function userSignup(user) {
     return function (dispatch){
-        //correct the route
-        return fetch('/api/',{
+        return fetch('/api/users',{
             method: 'POST',
             headers:{
                 Accept: "application/json",
@@ -93,4 +91,3 @@ export function userSignup(user) {
     }
 
 }
-//write signupUser
