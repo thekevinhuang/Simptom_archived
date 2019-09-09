@@ -43,23 +43,21 @@ export function userLogin(user) {
             },
             credentials: 'same-origin',
             body: JSON.stringify({user:user})
-            .then(result=> result.json())
-            .then((responseJson)=> {
-                dispatch({type: "USER_LOGIN", user:responseJson})
-                if (typeof localStorage === 'object'){
-                    try{
-                        localStorage.setItem("current_user", JSON.stringify(responseJson))
-                    } catch (e){
-                        alert("There was an issue with your login")
-                    }
-                }
-            })
-            .catch(error=>{
-                dispatch({type: "LOGIN_FAILURE", error:error})
-            })
-
         })
-        
+        .then(result=> result.json())
+        .then((responseJson)=> {
+            dispatch({type: "USER_LOGIN", user:responseJson})
+            if (typeof localStorage === 'object'){
+                try{
+                    localStorage.setItem("current_user", JSON.stringify(responseJson))
+                } catch (e){
+                    alert("There was an issue with your login")
+                }
+            }
+        })
+        .catch(error=>{
+            dispatch({type: "LOGIN_FAILURE", error:error})
+        })
     }
 }
 
@@ -73,21 +71,20 @@ export function userSignup(user) {
             },
             credentials: "same-origin",
             body: JSON.stringify({user:user})
-            .then(result=> result.json())
-            .then((responseJSON)=> {
-                dispatch({type: "USER_SIGNUP", user: responseJSON})
-                if (typeof localStorage === 'object'){
-                    try{
-                        localStorage.setItem("current_user", JSON.stringify(responseJson))
-                    } catch (e){
-                        alert("There was an issue with your login")
-                    }
+        })
+        .then(result=> result.json())
+        .then((responseJSON)=> {
+            dispatch({type: "USER_SIGNUP", user: responseJSON})
+            if (typeof localStorage === 'object'){
+                try{
+                    localStorage.setItem("current_user", JSON.stringify(responseJSON))
+                } catch (e){
+                    alert("There was an issue with your login")
                 }
-            })
-            .catch(error=>{
-                dispatch({type: "LOGIN_FAILURE", error:error})
-            })
+            }
+        })
+        .catch(error=>{
+            dispatch({type: "LOGIN_FAILURE", error:error})
         })
     }
-
 }

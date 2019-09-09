@@ -29,7 +29,7 @@ class Login extends Component {
 
     loginChange = name => event => {
         this.setState({
-            [name] :event.target.value
+            [name] : event.target.value
         })
     }
 
@@ -37,7 +37,7 @@ class Login extends Component {
         //if logged in already, just redirect
         return(
             <form onSubmit={this.loginSubmit}>
-                <TextField label="email" onChange={this.loginChange("username")} value={this.state.email} margin="normal"/>
+                <TextField label="email" onChange={this.loginChange("email")} value={this.state.email} margin="normal"/>
 
                 <TextField label="password" type="password" onChange={this.loginChange("password")} value={this.state.password} margin="normal"/>
 

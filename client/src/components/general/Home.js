@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import GoogleLogin from '../users/GoogleLogin'
 import {Link} from 'react-router-dom'
+import '../../css/Home.css'
 
 class Home extends Component {
 
@@ -12,11 +13,13 @@ class Home extends Component {
     render() {
         return(
             <React.Fragment>
-                Hello!
-                <GoogleLogin/>
-                <Link to={"/logout"}>logout</Link>
-                <Link to={"/signup"}>signup</Link>
-                <Link to={"/login"}>login</Link>
+                <div class="home-grid">
+                    Welcome to Simptom
+                    <GoogleLogin/>
+                    <Link to={"/logout"}>logout</Link>
+                    <Link to={"/signup"}>signup</Link>
+                    <Link to={"/login"}>login</Link>   
+                </div>
             </React.Fragment>
         )
     }

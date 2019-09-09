@@ -5,8 +5,8 @@ import Button from '@material-ui/core/Button'
 import {userSignup} from '../../actions/userActions'
 
 const initialState= {
-    email="",
-    password=""
+    email: "",
+    password: ""
 }
 
 class Signup extends Component {
@@ -17,7 +17,7 @@ class Signup extends Component {
 
     signupSubmit = event => {
         event.preventDefault()
-        user = {
+        let user = {
             email: this.state.email,
             password: this.state.password
         }
@@ -32,6 +32,7 @@ class Signup extends Component {
             [name]: event.target.value
         })
     }
+    
     //write signup change
     render() {
         return (
