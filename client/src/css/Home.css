@@ -1,4 +1,4 @@
 .home-grid {
-    grid-template-columns: 100px auto 100px;
-    grid-template-rows: 40% 20% 10% 30%
+    grid-template-columns: [left-spacer] 100px [middle] auto [right-spacer] 100px;
+    grid-template-rows: [header] 10% [title] 30% [spacer] 20% [buttons] 10% 30%
 }
