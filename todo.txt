@@ -26,5 +26,5 @@
 
     Create Body Area
 
-Create a login and create user page, login
+Create a CSS grid for home page.
     

@@ -1,3 +1,4 @@
 .home-grid {
-    display:grid
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows: 40% 20% 10% 30%
 }
