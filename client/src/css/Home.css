@@ -1,4 +1,21 @@
 .home-grid {
+    display: grid;
     grid-template-columns: [left-spacer] 100px [middle] auto [right-spacer] 100px;
-    grid-template-rows: [header] 10% [title] 30% [spacer] 20% [buttons] 10% 30%
+    grid-template-rows: [header] 1fr [title] 3fr [spacer] 2fr [buttons] 1fr [bottom-pad] 3fr;
+}
+
+.title {
+    grid-column-start: middle;
+    grid-column-end: right-spacer;
+    grid-row-start: title;
+    grid-row-end: spacer;
+    justify-self: center;
+}
+
+.buttons {
+    grid-column-start: middle;
+    grid-column-end: right-spacer;
+    grid-row-start: buttons;
+    grid-row-end: bottom-pad;
+    justify-self: center;
 }

@@ -14,11 +14,13 @@ class Home extends Component {
         return(
             <React.Fragment>
                 <div class="home-grid">
-                    Welcome to Simptom
-                    <GoogleLogin/>
-                    <Link to={"/logout"}>logout</Link>
-                    <Link to={"/signup"}>signup</Link>
-                    <Link to={"/login"}>login</Link>   
+                    <div class="title">Welcome to Simptom</div>
+                    <div class="buttons"> 
+                        <GoogleLogin/>
+                        <Link to={"/logout"}>logout</Link>
+                        <Link to={"/signup"}>signup</Link>
+                        <Link to={"/login"}>login</Link> 
+                    </div> 
                 </div>
             </React.Fragment>
         )
