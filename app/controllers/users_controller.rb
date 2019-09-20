@@ -45,9 +45,12 @@ class UsersController < ApplicationController
         response = HTTParty.get(url)
         data = response.parsed_response
         @user = User.find_or_initialize_by(email: data["email"])
-        @user.email = data["email"]
-        @user.username = data["name"]
-        @user.password = SecureRandom.hex(8)
+
+        if @user.email
+            @user.email = data["email"]
+            @user.username = data["name"]
+            @user.password = SecureRandom.hex(8)
+        end
 
         if @user.save
             render json: @user
